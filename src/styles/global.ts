@@ -21,6 +21,8 @@ export default createGlobalStyle`
         background: linear-gradient(75.81deg, var(--gray-3) 0%, var(--gray-2) 89.91%);
         color: var(--gray-4);
         font-family: 'Outfit', sans-serif;
+        min-height: 100vh;
+        min-width: 100%;
     }
 
     button {
