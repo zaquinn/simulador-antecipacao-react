@@ -22,3 +22,5 @@ Após isso, para iniciar o projeto em seu servidor host:
 `yarn start`
 
 Figma da aplicação: https://www.figma.com/file/foHAlmA3tFMxft2qPFfDaA/Front-End-M6-Teste-tecnico?node-id=0%3A1
+
+Deploy no Vercel: https://paymentsimulator.vercel.app/
