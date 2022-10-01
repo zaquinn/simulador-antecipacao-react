@@ -12,10 +12,14 @@ export const Container = styled.div<IContainerProps>`
   display: flex;
   align-items: center;
   flex-direction: column;
+  position: fixed;
+  top: auto;
+  bottom: 0;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     width: 450px;
     height: 100vh;
+    position: relative;
   }
 
   > button {
@@ -28,7 +32,7 @@ export const Container = styled.div<IContainerProps>`
     justify-content: center;
     align-items: center;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       display: none;
     }
   }
@@ -38,7 +42,7 @@ export const Container = styled.div<IContainerProps>`
     font-weight: 600;
     font-size: 25px;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       font-size: 35px;
     }
   }
@@ -50,14 +54,15 @@ export const Form = styled.form<IContainerProps>`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 70%;
+  height: 100%;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: flex;
+    height: 70%;
   }
 
   > button {
-    margin-top: 20px;
+    margin: 20px 0px 10px 0px;
     background-color: var(--gray-4);
     font-size: 18px;
     font-weight: 500;
@@ -126,7 +131,8 @@ export const InputButtonContainer = styled.div`
 export const DayNumberContainer = styled.div`
   width: 80%;
   max-width: 370px;
-  height: 40px;
+  min-height: 40px;
+  margin: 5px 0px 5px 0px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 5px;

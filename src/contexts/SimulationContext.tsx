@@ -1,5 +1,5 @@
 import { AxiosResponse } from "axios";
-import {
+import React, {
   createContext,
   ReactNode,
   useCallback,
@@ -15,13 +15,23 @@ interface ISimulation {
   days?: Number[];
 }
 
+interface ISimulationResponse {
+  [key: string]: number;
+}
+
+interface ISimulationData {
+  days: number;
+  value: number;
+}
+
 interface ISimulationProviderProps {
   children: ReactNode;
 }
 
 interface ISimulationContextData {
-  simulationData: ISimulation[];
+  simulationData: ISimulationData[];
   postSimulation: (data: ISimulation) => Promise<void>;
+  setSimulationData: React.Dispatch<React.SetStateAction<ISimulationData[]>>;
 }
 
 const SimulationContext = createContext<ISimulationContextData>(
@@ -38,20 +48,25 @@ const useSimulation = () => {
 };
 
 const SimulationProvider = ({ children }: ISimulationProviderProps) => {
-  const [simulationData, setSimulationData] = useState<ISimulation[]>([]);
+  const [simulationData, setSimulationData] = useState<ISimulationData[]>([]);
 
   const postSimulation = useCallback(async (data: ISimulation) => {
     api
       .post("", data)
-      .then((response: AxiosResponse<ISimulation>) => {
-        console.log(response);
-        setSimulationData([response.data]);
+      .then((response: AxiosResponse<ISimulationResponse>) => {
+        const data = Object.entries(response.data).map(([key, values]) => ({
+          days: Number(key),
+          value: values,
+        }));
+        setSimulationData(data);
       })
       .catch((error) => console.log(error));
   }, []);
 
   return (
-    <SimulationContext.Provider value={{ postSimulation, simulationData }}>
+    <SimulationContext.Provider
+      value={{ postSimulation, simulationData, setSimulationData }}
+    >
       {children}
     </SimulationContext.Provider>
   );

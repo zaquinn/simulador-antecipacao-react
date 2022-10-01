@@ -40,7 +40,7 @@ export const SideMenu = () => {
   const [dayNumber, setDayNumber] = useState("");
   const [daysList, setDaysList] = useState<Number[]>([]);
 
-  const { postSimulation } = useSimulation();
+  const { postSimulation, setSimulationData } = useSimulation();
 
   const growSideMenu = () => {
     setFull(!full);
@@ -73,6 +73,7 @@ export const SideMenu = () => {
 
     setDayNumber("");
     setDaysList([]);
+    setSimulationData([]);
     reset();
   };
 
