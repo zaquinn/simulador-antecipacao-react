@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Container, Form } from "./styles";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
+import { Input } from "../Input";
 
 export const SideMenu = () => {
   const [full, setFull] = useState(false);
@@ -13,7 +14,13 @@ export const SideMenu = () => {
         {!full ? <IoIosArrowUp /> : <IoIosArrowDown />}
       </button>
       <h1>Simule Sua Antecipação</h1>
-      {full && <Form>Oi</Form>}
+      <Form full={full}>
+        <Input />
+        <Input />
+        <Input />
+        <Input />
+        <button>SIMULAR</button>
+      </Form>
     </Container>
   );
 };

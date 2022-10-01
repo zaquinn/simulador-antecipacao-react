@@ -44,9 +44,25 @@ export const Container = styled.div<IContainerProps>`
   }
 `;
 
-export const Form = styled.form`
-  display: flex;
+export const Form = styled.form<IContainerProps>`
+  display: ${(props) => (props.full ? "flex" : "none")};
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 70%;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+
+  > button {
+    margin-top: 20px;
+    background-color: var(--gray-4);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--white);
+    padding: 12px 50px 12px 50px;
+    border-radius: 20px;
+  }
 `;
