@@ -74,6 +74,7 @@ export const SideMenu = () => {
     setDayNumber("");
     setDaysList([]);
     setSimulationData([]);
+    setFull(false);
     reset();
   };
 
