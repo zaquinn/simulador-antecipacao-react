@@ -66,3 +66,102 @@ export const Form = styled.form<IContainerProps>`
     border-radius: 20px;
   }
 `;
+
+export const InputContainer = styled.div`
+  width: 80%;
+  max-width: 370px;
+
+  > h2 {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--gray-3);
+  }
+
+  > input {
+    width: 60%;
+    height: 44px;
+    background-color: transparent;
+    font-size: 16px;
+    color: var(--gray-3);
+    border-bottom: 2px solid var(--gray-4);
+    padding-top: 20px;
+
+    ::placeholder {
+      color: var(--gray-3);
+    }
+  }
+`;
+
+export const InputButtonContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+
+  > input {
+    width: 65%;
+    height: 44px;
+    background-color: transparent;
+    font-size: 16px;
+    color: var(--gray-3);
+    border-bottom: 2px solid var(--gray-4);
+    padding-top: 20px;
+
+    ::placeholder {
+      color: var(--gray-3);
+    }
+  }
+
+  > button {
+    height: 28px;
+    width: 30%;
+    background-color: var(--gray-4);
+    font-size: 14px;
+    color: var(--white);
+    font-weight: 400;
+    border-radius: 14px;
+  }
+`;
+
+export const DayNumberContainer = styled.div`
+  width: 80%;
+  max-width: 370px;
+  height: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 5px;
+`;
+
+export const DayNumberBox = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > div {
+    height: 20px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: var(--gray-1);
+
+    > h3 {
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    > button {
+      height: 14px;
+      width: 14px;
+      border-radius: 100%;
+      background-color: var(--gray-4);
+      font-size: 8px;
+      color: var(--white);
+      transform: translate(25px, -10px);
+      position: absolute;
+    }
+  }
+`;

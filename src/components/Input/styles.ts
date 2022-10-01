@@ -24,3 +24,9 @@ export const Container = styled.div`
     }
   }
 `;
+
+export const ErrorMessage = styled.span`
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--red);
+`;
